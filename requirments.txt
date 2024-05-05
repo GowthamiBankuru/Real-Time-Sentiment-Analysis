@@ -1,6 +1,9 @@
 pymongo
 kafka
 confluent_kafka
-pyspark==3.2.1
-textblob
 flask
+textblob
+Neo4j
+Json
+NLTK
+Requests
