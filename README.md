@@ -33,31 +33,39 @@ Neo4j Kafka Connector:
 Configure Neo4j Kafka connector as a sink to update the appropriate nodes with sentiments.
 
 Technologies:
+
 Backend:
 Flask for web serving.
 Kafka (with confluent_kafka) for message processing.
 Neo4j for graph data storage and querying.
 MongoDB for additional user profile and tweet storage.
+
 NLP Libraries:
 TextBlob or NLTK for sentiment analysis.
+
 Other Libraries:
 pymongo for MongoDB integration.
 requests for API calls.
 json for data manipulation.
 
 Deliverables:
+
 Neo4j Setup:
 Deployed Neo4j graph database and loaded Twitter dataset.
 Validated graph queries for extraction, recommendation, and sentiment updates.
+
 MongoDB Schema:
 Designed schema for user profiles and tweets.
 Populated with sample data.
+
 Kafka Sentiment Pipeline:
 Implemented producer and consumer applications using Kafka.
 Configured Neo4j Kafka Connector for sentiment updates.
+
 Sentiment Analysis:
 Integrated an NLP library for sentiment analysis.
 Classified and processed sentiments for streamed tweets.
+
 Web Application:
 Built a Flask web application to visualize recommendations and sentiment results.
 Provided CSS-styled templates for a professional look.
