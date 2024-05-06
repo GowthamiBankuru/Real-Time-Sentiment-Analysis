@@ -1,8 +1,63 @@
 # Twitter-sentimental-Analysis
-1. Deploy Neo4J graph database and set up the tweets default graph database that comes with it. Can be found here.
-2. Get acquainted with the underlying data model.
-3. Query this database to extract the list of users and hashtags and Select users and hashtags to use in your demo and prepare a test dataset of tweets by a selected users. The tweets should contain some of selected hash tags and other users
-4. Write the graph insertion, recommendation, and sentiment update queries in cipher and validate them before using them in the driver (Bolt if you are using Python).
-5. Design your MangoDb schema for storing user profile and tweets
-6. For sentiment analysis, use an NLP library that works well with the stream processing engine you select (either Kafka Streams or Spark streaming) to classify raw tweets SENG 691 Data Intensive application Project – Real time Sentiment Analysis 3 that are streamed using Kafka Message broker. If you opt for spark streaming engine use Structured streaming API.
-7. The results of sentiment analysis are written into the SENTIMENT Kafka topic. A Neo4J Kafka connector need to be configured with Neo4J as a sink to update the appropriate nodeS. 
+Project Overview:
+The Real-time Twitter Sentiment Analysis project is a comprehensive system for collecting, processing, and analyzing tweets to determine the sentiments expressed in them. The solution involves deploying the default Neo4j graph database containing Twitter data, enhancing it with user-defined nodes and relationships, and analyzing tweet sentiments in real-time using NLP techniques.
+
+Main Components:
+Graph Database Setup:
+Deploy Neo4j and set up the default Twitter database.
+Understand the Data Model used in Neo4j, including node labels ("User," "Hashtag," etc.) and relationships ("USING," "FOLLOWS," etc.).
+Prepare Queries:
+Extract the list of users and hashtags.
+Select specific users and hashtags for the demo.
+Prepare a test dataset of tweets containing the selected hashtags and users.
+Graph Queries (Cypher):
+Insertion Queries:
+Insertion queries to add additional users, hashtags, tweets, and relationships.
+Recommendation Queries:
+Queries to recommend new users to follow based on common interests or similar hashtags.
+Sentiment Update Queries:
+Queries to update the sentiments on appropriate nodes after processing via Kafka.
+
+Sentiment Analysis Pipeline:
+NLP Library: Use TextBlob or NLTK for sentiment classification.
+Streaming Engine:
+Kafka Streams or Spark Streaming (using Structured Streaming API).
+Sentiment Analysis Process:
+Stream tweets via Kafka message broker.
+Classify sentiments (positive, neutral, negative) using NLP techniques.
+Write results to the SENTIMENT Kafka topic.
+Kafka Integration:
+Producer: Stream raw tweets to Kafka topics.
+Consumer: Process the tweets, classify sentiments, and write results to SENTIMENT topic.
+Neo4j Kafka Connector:
+Configure Neo4j Kafka connector as a sink to update the appropriate nodes with sentiments.
+
+Technologies:
+Backend:
+Flask for web serving.
+Kafka (with confluent_kafka) for message processing.
+Neo4j for graph data storage and querying.
+MongoDB for additional user profile and tweet storage.
+NLP Libraries:
+TextBlob or NLTK for sentiment analysis.
+Other Libraries:
+pymongo for MongoDB integration.
+requests for API calls.
+json for data manipulation.
+
+Deliverables:
+Neo4j Setup:
+Deployed Neo4j graph database and loaded Twitter dataset.
+Validated graph queries for extraction, recommendation, and sentiment updates.
+MongoDB Schema:
+Designed schema for user profiles and tweets.
+Populated with sample data.
+Kafka Sentiment Pipeline:
+Implemented producer and consumer applications using Kafka.
+Configured Neo4j Kafka Connector for sentiment updates.
+Sentiment Analysis:
+Integrated an NLP library for sentiment analysis.
+Classified and processed sentiments for streamed tweets.
+Web Application:
+Built a Flask web application to visualize recommendations and sentiment results.
+Provided CSS-styled templates for a professional look.
